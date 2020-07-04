@@ -54,8 +54,14 @@
                 <td> {{ $ask->like }} </td>
                 <td> {{ $ask->dislike }} </td>
                 <td> 
-                  <a href="/jawaban/{{ $ask->id }}"><button class="btn btn-primary btn-sm">View Answer</button></a>
-                  <a href="/jawaban/{{ $ask->id }}/create"><button class="btn btn-warning btn-sm">Add Answer</button></a>
+                  <a href="/pertanyaan/{{ $ask->id }}"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a>
+                  <a href="/jawaban/{{ $ask->id }}/create"><button class="btn btn-warning btn-sm"><i class="fas fa-plus"></i></button></a>
+                  <a href="/pertanyaan/{{ $ask->id }}/edit"><button class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button></a>
+                  <form action="/pertanyaan/{{$ask->id}}" method="post" style="display: inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                  </form>
                 </td>
               </tr>
           @endforeach

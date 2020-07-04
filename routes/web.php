@@ -34,6 +34,12 @@ Route::post('/items', 'ItemController@store');
 Route::get('/pertanyaan', 'Larahub\PertanyaanController@index');
 Route::get('/pertanyaan/create', 'Larahub\PertanyaanController@create');
 Route::post('/pertanyaan', 'Larahub\PertanyaanController@store');
-Route::get('/jawaban/{pertanyaan_id}', 'Larahub\JawabanController@index');
+Route::get('/pertanyaan/{id}', 'Larahub\PertanyaanController@show');
+Route::get('/pertanyaan/{id}/edit', 'Larahub\PertanyaanController@edit');
+Route::put('/pertanyaan/{id}', 'Larahub\PertanyaanController@update');
+Route::delete('/pertanyaan/{id}', 'Larahub\PertanyaanController@destroy');
+
+// Answer
+
 Route::get('/jawaban/{pertanyaan_id}/create', 'Larahub\JawabanController@create');
 Route::post('/jawaban/{pertanyaan_id}', 'Larahub\JawabanController@store');
